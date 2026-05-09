@@ -54,9 +54,9 @@
 - **Service Worker** – PWA Offline-Funktionalität
 
 ### Backend
-- **Node.js** – Runtime
-- **Express** – Web Framework (v4.18.2)
-- **JSON** – Flat-File Persistenz (keine Datenbank)
+- **GitHub API** – Persistenz direkt über GitHub-Dateien und Git-Commits
+- **Keine Node.js-Serverkomponente** – die Anwendung läuft als statische Website
+- **JSON** – Flat-File Persistenz über `data/users.json` und `data/bookings.json` in GitHub
 
 ### Build & Deployment
 - **npm** – Package Management
@@ -67,34 +67,21 @@
 ## Installation & Setup
 
 ### Voraussetzungen
-- Node.js 14+ und npm
+- Kein Node.js erforderlich
+- Ein GitHub Personal Access Token mit `repo`- oder `public_repo`-Zugriff
 
 ### Schritt 1: Projekt klonen oder extrahieren
 ```bash
 cd /path/to/golf
 ```
 
-### Schritt 2: Dependencies installieren
-```bash
-npm install
-```
+### Schritt 2: Öffnen Sie die Website als statische Seite
+- Verwenden Sie einen beliebigen Static-Host, z. B. GitHub Pages, Netlify oder einen lokalen Static Server
+- Alternativ können Sie die Seiten direkt in einem Browser öffnen, wenn CORS und HTTPS-Konfiguration dies zulassen
 
-Dies installiert Express v4.18.2.
-
-### Schritt 3: Server starten
-```bash
-npm start
-```
-
-**Output:**
-```
-✅ Golf App läuft auf: http://localhost:3000
-```
-
-### Schritt 4: App öffnen
-Öffnen Sie http://localhost:3000 im Browser.
-
-Ein Demo-Konto wird automatisch beim ersten Start erstellt.
+### Schritt 3: GitHub-Konfiguration eintragen
+- Geben Sie auf der Login- oder Registrierungsseite Ihren GitHub Owner, Repository, Branch und Token ein
+- Die App speichert Daten anschließend über die GitHub API direkt in `data/users.json` und `data/bookings.json`
 
 ---
 
