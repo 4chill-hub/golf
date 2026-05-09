@@ -1,0 +1,15 @@
+[
+  {
+    "id": "user_demo_001",
+    "email": "domi.mueller@gmx.net",
+    "firstName": "Dominic",
+    "lastName": "Müller",
+    "nickname": "Achilles",
+    "phone": "+41 79 123 45 67",
+    "memberNumber": "MEM-001",
+    "joinDate": "2026-05-09",
+    "status": "active",
+    "passwordHash": "6421fa09",
+    "createdAt": "2026-05-09T10:00:00Z"
+  }
+]

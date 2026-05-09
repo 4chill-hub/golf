@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Dashboard - 4chill.ch</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="images/achilles-logo-images.jpg" alt="4chill.ch Logo" class="logo-image">
+                <span>4chill.ch</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="calendar.html" class="nav-link">Kalender</a>
+                <a href="#" class="nav-link" id="logoutLink" onclick="logout(event)">Abmelden</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Dashboard Header Banner -->
+        <div class="dashboard-header">
+            <div class="header-content">
+                <h1>Willkommen zurück!</h1>
+                <p id="greeting" class="subtitle">Verwalte dein Profil und deine Buchungen</p>
+            </div>
+            <div class="header-graphic">
+                <svg width="250" height="200" viewBox="0 0 250 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- User badge circle -->
+                    <circle cx="125" cy="100" r="80" fill="#e0f2fe" opacity="0.5"/>
+                    <circle cx="125" cy="70" r="35" fill="#1f2937"/>
+                    <ellipse cx="125" cy="55" rx="20" ry="25" fill="#ffffff"/>
+                    <circle cx="110" cy="85" r="8" fill="#ffffff"/>
+                    <circle cx="140" cy="85" r="8" fill="#ffffff"/>
+                    <path d="M 105 95 Q 125 105 145 95" stroke="#ffffff" stroke-width="2" fill="none"/>
+                    
+                    <!-- Member badge ribbon -->
+                    <rect x="75" y="135" width="100" height="30" rx="15" fill="#6b7280"/>
+                    <text x="125" y="155" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">
+                        Member
+                    </text>
+                </svg>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Profile Card -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h2>👤 Profil</h2>
+                    <button id="editProfileBtn" class="btn btn-small" style="background: #4b5563; color: white;">Bearbeiten</button>
+                </div>
+                
+                <!-- Display Mode -->
+                <div id="profileDisplay" class="profile-info">
+                    <div class="info-row">
+                        <span class="label">Nickname:</span>
+                        <span id="userNickname" class="value">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Name:</span>
+                        <span id="userName" class="value">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Email:</span>
+                        <span id="userEmail" class="value">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Telefon:</span>
+                        <span id="userPhone" class="value">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Mitgliedsnummer:</span>
+                        <span id="memberNumber" class="value">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Beitrittsdatum:</span>
+                        <span id="joinDate" class="value">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Status:</span>
+                        <span id="status" class="value badge">Aktiv</span>
+                    </div>
+                </div>
+                
+                <!-- Edit Mode -->
+                <div id="profileEdit" style="display: none;">
+                    <form id="editProfileForm">
+                        <div class="form-group">
+                            <label for="editNickname">Nickname</label>
+                            <input type="text" id="editNickname" name="nickname" placeholder="Dein Golfname">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="editFirstName">Vorname</label>
+                                <input type="text" id="editFirstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="editLastName">Nachname</label>
+                                <input type="text" id="editLastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="editPhone">Telefon</label>
+                            <input type="tel" id="editPhone" name="phone" placeholder="+41 79 ...">
+                        </div>
+                        <div id="editError" class="error-message" style="display: none;"></div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button type="submit" class="btn btn-primary">Speichern</button>
+                            <button type="button" class="btn" style="background: #d1d5db; color: #111827;" onclick="cancelEditProfile()">Abbrechen</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bookings Card -->
+            <div class="card">
+                <h2>📅 Buchungen</h2>
+                <p class="text-muted">Sie haben <strong id="bookingCount">0</strong> aktive Buchungen</p>
+                <a href="calendar.html" class="btn btn-primary full-width">Zum Kalender</a>
+            </div>
+
+            <!-- Statistics Card -->
+            <div class="card">
+                <h2>📊 Statistiken</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalBookings">0</div>
+                        <div class="stat-label">Gesamtbuchungen</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="thisMonthBookings">0</div>
+                        <div class="stat-label">Diesen Monat</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 4chill.ch - Golf Simulator Club. All rights reserved.</p>
+    </footer>
+
+    <script src="js/db.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

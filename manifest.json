@@ -1,0 +1,52 @@
+{
+  "name": "4chill.ch - Golf Simulator Club",
+  "short_name": "4chill",
+  "description": "Buchung von Spielzeiten am Golf Simulator für Vereinsmitglieder",
+  "scope": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#1f2937",
+  "background_color": "#111827",
+  "categories": ["sports", "entertainment"],
+  "icons": [
+    {
+      "src": "icons/icon-192x192.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512x512.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-192x192.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-maskable-512x512.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kalender",
+      "short_name": "Kalender",
+      "description": "Direkt zum Buchungskalender",
+      "url": "/calendar.html"
+    },
+    {
+      "name": "Anmelden",
+      "short_name": "Login",
+      "description": "Zur Anmeldeseite",
+      "url": "/login.html"
+    }
+  ]
+}

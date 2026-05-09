@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+  <!-- Golf Course Hero Image -->
+  
+  <!-- Sky gradient background -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87ceeb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0f4ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="500" height="250" fill="url(#skyGradient)"/>
+  
+  <!-- Clouds -->
+  <ellipse cx="80" cy="80" rx="40" ry="25" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="120" cy="85" rx="35" ry="20" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="380" cy="120" rx="50" ry="30" fill="#ffffff" opacity="0.6"/>
+  <ellipse cx="440" cy="125" rx="40" ry="25" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- Fairway/Grass -->
+  <rect y="250" width="500" height="150" fill="url(#grassGradient)"/>
+  
+  <!-- Sand bunker -->
+  <ellipse cx="150" cy="300" rx="60" ry="40" fill="#dcc9a3"/>
+  <ellipse cx="400" cy="320" rx="80" ry="50" fill="#dcc9a3"/>
+  
+  <!-- Water hazard -->
+  <ellipse cx="300" cy="280" rx="70" ry="35" fill="#3498db"/>
+  <circle cx="280" cy="270" r="5" fill="#5dade2" opacity="0.6"/>
+  <circle cx="320" cy="285" r="6" fill="#5dade2" opacity="0.6"/>
+  
+  <!-- Trees -->
+  <g>
+    <!-- Tree 1 (left) -->
+    <rect x="35" y="220" width="8" height="40" fill="#8b6914"/>
+    <circle cx="39" cy="200" r="30" fill="#228b22"/>
+    <circle cx="15" cy="210" r="25" fill="#228b22"/>
+    <circle cx="60" cy="210" r="25" fill="#228b22"/>
+    
+    <!-- Tree 2 (right) -->
+    <rect x="445" y="200" width="10" height="60" fill="#8b6914"/>
+    <circle cx="450" cy="175" r="35" fill="#1b5e20"/>
+    <circle cx="420" cy="185" r="30" fill="#1b5e20"/>
+    <circle cx="480" cy="185" r="30" fill="#1b5e20"/>
+  </g>
+  
+  <!-- Flag pole with flag -->
+  <g transform="translate(300, 200)">
+    <!-- Pole -->
+    <line x1="0" y1="0" x2="0" y2="80" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Flag -->
+    <polygon points="0,-2 0,8 30,3" fill="#e74c3c"/>
+    
+    <!-- Golf ball on green -->
+    <circle cx="0" cy="85" r="6" fill="#ffffff" stroke="#ddd" stroke-width="1"/>
+    <circle cx="-2" cy="83" r="1" fill="#ddd"/>
+    <circle cx="2" cy="83" r="1" fill="#ddd"/>
+    <circle cx="0" cy="87" r="1" fill="#ddd"/>
+  </g>
+  
+  <!-- Golfer silhouette -->
+  <g transform="translate(100, 240)">
+    <!-- Head -->
+    <circle cx="0" cy="0" r="8" fill="#f4a460"/>
+    <!-- Body -->
+    <rect x="-5" y="8" width="10" height="20" fill="#1e3a5f"/>
+    <!-- Arms (golf swing position) -->
+    <line x1="-5" y1="12" x2="-25" y2="0" stroke="#f4a460" stroke-width="3" stroke-linecap="round"/>
+    <line x1="5" y1="12" x2="35" y2="5" stroke="#f4a460" stroke-width="3" stroke-linecap="round"/>
+    <!-- Club -->
+    <line x1="35" y1="5" x2="45" y2="-15" stroke="#8b4513" stroke-width="2" stroke-linecap="round"/>
+    <!-- Legs -->
+    <line x1="-2" y1="28" x2="-5" y2="42" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+    <line x1="2" y1="28" x2="8" y2="42" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Sun -->
+  <circle cx="450" cy="60" r="30" fill="#ffd700" opacity="0.8"/>
+  <line x1="450" y1="20" x2="450" y2="0" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="485" y1="55" x2="500" y2="55" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="480" y1="25" x2="492" y2="13" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+</svg>

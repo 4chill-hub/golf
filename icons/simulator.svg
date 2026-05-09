@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Golf Simulator Equipment Illustration -->
+  
+  <!-- Background (subtle gradient effect) -->
+  <rect width="400" height="300" fill="#f9fafb"/>
+  
+  <!-- Simulator Screen/Unit -->
+  <g>
+    <!-- Main body -->
+    <rect x="50" y="50" width="300" height="200" rx="10" fill="#1e40af" stroke="#0c2340" stroke-width="2"/>
+    
+    <!-- Screen -->
+    <rect x="70" y="70" width="260" height="140" rx="5" fill="#0f172a" stroke="#1e40af" stroke-width="2"/>
+    
+    <!-- Golf course visualization on screen -->
+    <g clip-path="url(#screenClip)">
+      <rect x="70" y="70" width="260" height="140" fill="#2d7f3d"/>
+      <!-- Fairway -->
+      <polygon points="200,210 150,150 250,150" fill="#4ade80"/>
+      <!-- Green -->
+      <circle cx="200" cy="130" r="30" fill="#22c55e"/>
+      <!-- Flag -->
+      <line x1="200" y1="100" x2="200" y2="130" stroke="#666" stroke-width="2"/>
+      <rect x="200" y="95" width="30" height="15" fill="#ef4444"/>
+    </g>
+    <defs>
+      <clipPath id="screenClip">
+        <rect x="70" y="70" width="260" height="140" rx="5"/>
+      </clipPath>
+    </defs>
+    
+    <!-- Control buttons -->
+    <circle cx="100" cy="230" r="8" fill="#10b981" stroke="#059669" stroke-width="1"/>
+    <circle cx="130" cy="230" r="8" fill="#10b981" stroke="#059669" stroke-width="1"/>
+    <circle cx="160" cy="230" r="8" fill="#10b981" stroke="#059669" stroke-width="1"/>
+    <circle cx="190" cy="230" r="8" fill="#10b981" stroke="#059669" stroke-width="1"/>
+    <circle cx="220" cy="230" r="8" fill="#10b981" stroke="#059669" stroke-width="1"/>
+    <circle cx="250" cy="230" r="8" fill="#10b981" stroke="#059669" stroke-width="1"/>
+    <circle cx="280" cy="230" r="8" fill="#10b981" stroke="#059669" stroke-width="1"/>
+    <circle cx="310" cy="230" r="8" fill="#10b981" stroke="#059669" stroke-width="1"/>
+    
+    <!-- Display label -->
+    <text x="200" y="270" font-family="Arial, sans-serif" font-size="14" font-weight="bold" 
+          text-anchor="middle" fill="#1e40af">Premium Golf Simulator</text>
+  </g>
+  
+  <!-- Golf Club -->
+  <g transform="translate(340, 100)">
+    <!-- Shaft -->
+    <line x1="0" y1="0" x2="0" y2="80" stroke="#666" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Grip -->
+    <rect x="-4" y="70" width="8" height="20" rx="4" fill="#8b4513"/>
+    
+    <!-- Club head -->
+    <ellipse cx="0" cy="-10" rx="12" ry="8" fill="#d97706"/>
+    <polygon points="0,-10 -15,0 -15,5 0,5 15,5 15,0" fill="#c4a000"/>
+    
+    <!-- Sheen -->
+    <ellipse cx="-3" cy="-8" rx="4" ry="3" fill="#f59e0b" opacity="0.6"/>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Trojan War Helm inspired logo -->
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#1e40af" stroke-width="3"/>
+  
+  <!-- Helm main body (golden) -->
+  <ellipse cx="100" cy="95" rx="45" ry="50" fill="#f59e0b"/>
+  <path d="M60 90 Q60 130 100 140 Q140 130 140 90" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+  
+  <!-- Helm crest -->
+  <polygon points="100,30 95,60 105,60" fill="#10b981"/>
+  <rect x="95" y="55" width="10" height="35" fill="#10b981"/>
+  
+  <!-- Face guard -->
+  <path d="M75 85 L75 110 Q75 115 80 115 L120 115 Q125 115 125 110 L125 85" 
+        fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Eye holes -->
+  <circle cx="85" cy="95" r="4" fill="#1e40af"/>
+  <circle cx="115" cy="95" r="4" fill="#1e40af"/>
+  
+  <!-- Nose guard -->
+  <line x1="100" y1="90" x2="100" y2="110" stroke="#d97706" stroke-width="2"/>
+  
+  <!-- Cheek guards -->
+  <path d="M75 100 Q70 105 75 110" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round"/>
+  <path d="M125 100 Q130 105 125 110" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Golf club overlay (subtle) -->
+  <g opacity="0.3">
+    <line x1="120" y1="140" x2="135" y2="160" stroke="#1e40af" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="135" cy="165" r="8" fill="#1e40af"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="175" font-family="Arial, sans-serif" font-size="16" font-weight="bold" 
+        text-anchor="middle" fill="#1e40af">4CHILL</text>
+</svg>
