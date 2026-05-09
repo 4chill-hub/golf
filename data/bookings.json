@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "memberId": "user_1778369431142_xoimy16wu",
+    "date": "2026-05-17",
+    "startTime": "18:00",
+    "endTime": "19:00",
+    "duration": 60,
+    "notes": "",
+    "id": "booking_1778369466432_nl9esv1hq",
+    "createdAt": "2026-05-09T23:31:06.432Z"
+  }
+]
