@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.github.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Registrieren - 4chill.ch</title>
     <link rel="stylesheet" href="css/styles.css">
@@ -68,31 +68,6 @@
                     </div>
 
                     <div id="errorMessage" class="error-message" style="display: none;"></div>
-
-                    <details class="form-group github-config">
-                        <summary>GitHub Persistenz konfigurieren</summary>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="githubOwner">GitHub Owner</label>
-                                <input type="text" id="githubOwner" name="githubOwner" required placeholder="4chill-hub">
-                            </div>
-                            <div class="form-group">
-                                <label for="githubRepo">Repository</label>
-                                <input type="text" id="githubRepo" name="githubRepo" required placeholder="golf">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="githubBranch">Branch</label>
-                                <input type="text" id="githubBranch" name="githubBranch" value="main" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="githubToken">GitHub Token</label>
-                                <input type="password" id="githubToken" name="githubToken" required placeholder="Token mit repo-Rechten">
-                            </div>
-                        </div>
-                        <p class="hint">Der Token wird lokal im Browser gespeichert und dient zur Speicherung Ihrer Daten in GitHub.</p>
-                    </details>
 
                     <button type="submit" class="btn btn-primary full-width">Registrieren</button>
                 </form>

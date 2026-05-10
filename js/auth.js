@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
 
-    initGitHubConfigForm();
-
     if (loginForm) {
         loginForm.addEventListener('submit', handleLogin);
     }
@@ -20,13 +18,6 @@ async function handleLogin(event) {
 
     const errorMessage = document.getElementById('errorMessage');
     const submitBtn = event.target.querySelector('[type="submit"]');
-
-    try {
-        saveGitHubConfigFromForm();
-    } catch (err) {
-        showError(errorMessage, err.message);
-        return;
-    }
 
     if (isLoginRateLimited()) {
         showError(errorMessage, 'Zu viele Anmeldeversuche. Bitte später versuchen.');
@@ -144,13 +135,6 @@ async function handleRegister(event) {
         return;
     }
 
-    try {
-        saveGitHubConfigFromForm();
-    } catch (err) {
-        showError(errorMessage, err.message);
-        return;
-    }
-
     submitBtn.disabled = true;
     submitBtn.textContent = 'Registrieren...';
 
@@ -200,44 +184,6 @@ async function handleRegister(event) {
     }
 }
 
-function initGitHubConfigForm() {
-    const config = db.getGitHubConfig();
-    const fields = ['githubOwner', 'githubRepo', 'githubBranch', 'githubToken'];
-    if (!config) return;
-
-    fields.forEach(fieldId => {
-        const el = document.getElementById(fieldId);
-        if (!el) return;
-        if (fieldId === 'githubBranch') {
-            el.value = config.branch || 'main';
-            return;
-        }
-        el.value = config[fieldId.replace('github', '').toLowerCase()] || '';
-    });
-}
-
-function saveGitHubConfigFromForm() {
-    const ownerEl = document.getElementById('githubOwner');
-    const repoEl = document.getElementById('githubRepo');
-    const branchEl = document.getElementById('githubBranch');
-    const tokenEl = document.getElementById('githubToken');
-
-    if (!ownerEl || !repoEl || !tokenEl) {
-        return;
-    }
-
-    const owner = ownerEl.value.trim();
-    const repo = repoEl.value.trim();
-    const branch = branchEl.value.trim() || 'main';
-    const token = tokenEl.value.trim();
-
-    if (!owner || !repo || !token) {
-        throw new Error('GitHub Owner, Repository und Token sind erforderlich.');
-    }
-
-    db.saveGitHubConfig({ owner, repo, branch, token });
-}
-
 function showError(element, message) {
     if (element) {
         element.textContent = message;
@@ -252,7 +198,7 @@ function isValidEmail(email) {
 }
 
 function isLoginRateLimited() {
-    const attempts = JSON.parse(localStorage.getItem('golf_app_failed_login_attempts') || '{}');
+    const attempts = JSON.parse(sessionStorage.getItem('golf_app_failed_login_attempts') || '{}');
     const now = Date.now();
     const timeWindow = 15 * 60 * 1000;
 
@@ -267,16 +213,16 @@ function isLoginRateLimited() {
 }
 
 function recordFailedLogin(email) {
-    const attempts = JSON.parse(localStorage.getItem('golf_app_failed_login_attempts') || '{}');
+    const attempts = JSON.parse(sessionStorage.getItem('golf_app_failed_login_attempts') || '{}');
     const key = email || 'unknown';
     if (!attempts[key]) attempts[key] = [];
     attempts[key].push(Date.now());
-    localStorage.setItem('golf_app_failed_login_attempts', JSON.stringify(attempts));
+    sessionStorage.setItem('golf_app_failed_login_attempts', JSON.stringify(attempts));
 }
 
 function clearFailedLogins(email) {
-    const attempts = JSON.parse(localStorage.getItem('golf_app_failed_login_attempts') || '{}');
+    const attempts = JSON.parse(sessionStorage.getItem('golf_app_failed_login_attempts') || '{}');
     const key = email || 'unknown';
     delete attempts[key];
-    localStorage.setItem('golf_app_failed_login_attempts', JSON.stringify(attempts));
+    sessionStorage.setItem('golf_app_failed_login_attempts', JSON.stringify(attempts));
 }

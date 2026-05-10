@@ -53,8 +53,8 @@ self.addEventListener('fetch', event => {
         return;
     }
 
-    // Skip API requests – always fetch from network (Express backend)
-    if (event.request.url.includes('/api/') || event.request.url.includes('api.github.com')) {
+    // Skip API requests – always fetch from network
+    if (event.request.url.includes('/api/')) {
         return;
     }
 
